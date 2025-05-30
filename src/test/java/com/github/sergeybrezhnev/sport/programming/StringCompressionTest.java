@@ -1,9 +1,7 @@
-package sport.programming;
+package com.github.sergeybrezhnev.sport.programming;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class StringCompressionTest {
 

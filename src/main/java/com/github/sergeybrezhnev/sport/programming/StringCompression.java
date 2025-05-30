@@ -1,4 +1,4 @@
-package sport.programming;
+package com.github.sergeybrezhnev.sport.programming;
 
 /**
  * Дана строка, содержащая буквы //A-Z//:
@@ -13,7 +13,7 @@ package sport.programming;
  */
 public class StringCompression {
     public static String rle(String stringBeforeCompression) {
-        if (stringBeforeCompression == null || stringBeforeCompression.isBlank()) {
+        if (stringBeforeCompression == null || stringBeforeCompression.isEmpty()) {
             throw new IllegalArgumentException("Строка отсутствует или пустая строка");
         }
 
