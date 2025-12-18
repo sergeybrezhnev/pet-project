@@ -1,0 +1,114 @@
+{
+  "name" : "pet-project",
+  "crossId" : "6992f04e-8dba-477c-92f0-4e8dba877c5b",
+  "version" : "0.1",
+  "execution_mode" : "v3",
+  "description" : "gateway for pet-project",
+  "visibility" : "PRIVATE",
+  "flows" : [ ],
+  "gravitee" : "2.0.0",
+  "flow_mode" : "DEFAULT",
+  "resources" : [ ],
+  "properties" : [ ],
+  "members" : [ {
+    "source" : "memory",
+    "sourceId" : "admin",
+    "roles" : [ "480ac8b4-9341-4d1c-8ac8-b49341ad1c2a" ]
+  } ],
+  "pages" : [ {
+    "id" : "4cf020bd-21e4-4613-b020-bd21e4a6131a",
+    "crossId" : "544f342a-5729-42d2-8f34-2a572902d2f2",
+    "name" : "Aside",
+    "type" : "SYSTEM_FOLDER",
+    "order" : 0,
+    "published" : true,
+    "visibility" : "PUBLIC",
+    "lastModificationDate" : 1749109984239,
+    "contentType" : "application/json",
+    "homepage" : false,
+    "parentPath" : "",
+    "excludedAccessControls" : false,
+    "accessControls" : [ ],
+    "api" : "30491a53-a25a-4cff-891a-53a25a9cffef",
+    "attached_media" : [ ]
+  } ],
+  "plans" : [ {
+    "id" : "82df43e7-e49d-4157-9f43-e7e49da157b5",
+    "crossId" : "8bc443e6-4080-4cf4-8443-e640800cf430",
+    "name" : "pet-project-api-key",
+    "description" : "pet-project-api-key",
+    "validation" : "MANUAL",
+    "security" : "API_KEY",
+    "type" : "API",
+    "status" : "PUBLISHED",
+    "api" : "30491a53-a25a-4cff-891a-53a25a9cffef",
+    "order" : 0,
+    "characteristics" : [ ],
+    "created_at" : 1749109930484,
+    "updated_at" : 1749110122408,
+    "published_at" : 1749109930500,
+    "paths" : { },
+    "flows" : [ {
+      "id" : "2abb36b6-4d57-4bac-bb36-b64d570bac2f",
+      "name" : "",
+      "path-operator" : {
+        "path" : "/",
+        "operator" : "STARTS_WITH"
+      },
+      "condition" : "",
+      "consumers" : [ ],
+      "methods" : [ ],
+      "pre" : [ ],
+      "post" : [ ],
+      "enabled" : true
+    } ],
+    "comment_required" : false
+  } ],
+  "metadata" : [ {
+    "key" : "email-support",
+    "name" : "email-support",
+    "format" : "MAIL",
+    "value" : "${(api.primaryOwner.email)!''}",
+    "defaultValue" : "support@change.me",
+    "apiId" : "30491a53-a25a-4cff-891a-53a25a9cffef"
+  } ],
+  "id" : "30491a53-a25a-4cff-891a-53a25a9cffef",
+  "path_mappings" : [ "/messages" ],
+  "proxy" : {
+    "virtual_hosts" : [ {
+      "path" : "/pet-project"
+    } ],
+    "strip_context_path" : false,
+    "preserve_host" : false,
+    "groups" : [ {
+      "name" : "default-group",
+      "endpoints" : [ {
+        "backup" : false,
+        "inherit" : true,
+        "name" : "default",
+        "weight" : 1,
+        "type" : "http",
+        "target" : "http://localhost:8080"
+      } ],
+      "load_balancing" : {
+        "type" : "ROUND_ROBIN"
+      },
+      "http" : {
+        "connectTimeout" : 5000,
+        "idleTimeout" : 60000,
+        "keepAlive" : true,
+        "readTimeout" : 10000,
+        "pipelining" : false,
+        "maxConcurrentConnections" : 100,
+        "useCompression" : true,
+        "followRedirects" : false
+      }
+    } ]
+  },
+  "response_templates" : { },
+  "primaryOwner" : {
+    "id" : "168b06fb-df46-4ba4-8b06-fbdf463ba432",
+    "displayName" : "admin",
+    "type" : "USER"
+  }
+}
